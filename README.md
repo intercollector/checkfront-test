@@ -14,10 +14,4 @@ This library provides very common functions such as sorting, pagination and sear
 
 To test, simply load the html file into a web browser (internet connectivity needed in order to load libraries from their CDNs).
 
-Haiku API
-==========
-HaikuAPI.php
-This php script uses the built in curl functions in php to fetch data into a json encoded answer.
-To run, execute the following command:
-php HaikuAPI.php
-The only depenecies are the json_encode, json_decode and curl functions (built into PHP since 3.1).
+
