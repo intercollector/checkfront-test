@@ -1,0 +1,54 @@
+<html><head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+</head>
+<body>
+<div id="myContent"></div>
+<script>
+var logData = {
+  "success": true,
+  "logs": [
+    { "datetime": "2013-10-15T19:15:05", "type": "ERROR", "name": "Death", "message": "Nicole has died of dysentry", "source": "com.devcpu.oregontrail.uhoh" },
+    { "datetime": "2013-10-15T19:14:05", "type": "WARN", "name": "Injury", "message": "Mary has a broken arm", "source": "com.devcpu.oregontrail.whoops" },
+    { "datetime": "2013-10-15T19:12:05", "type": "INFO", "name": "Birth", "message": "Janet gave birth to twins", "source": "com.devcpu.oregontrail.uhoh" },
+    { "datetime": "2013-10-15T19:11:05", "type": "WARN", "name": "Broke down", "message": "Your wagon has broken a wheel", "source": "com.devcpu.oregontrail.wheeeeeel" },
+    { "datetime": "2013-10-15T12:10:05", "type": "ERROR", "name": "Death", "message": "6 of your oxen have perished overnight!", "source": "com.devcpu.oregantrail.oxentoxin" },
+    { "datetime": "2013-10-15T10:09:05", "type": "INFO", "name": "Crossing", "message": "You are faced with crossing a large river.", "source": "com.devcpu.oregantrail.gumboots.betterHavePacked" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "Traveller", "message": "Judas has joined your group", "source": "com.devcpu.oregantrail.start" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "Traveller", "message": "Jesus has joined your group", "source": "com.devcpu.oregantrail.start" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "Traveller", "message": "Sarah has joined your group", "source": "com.devcpu.oregantrail.start" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "Traveller", "message": "Nicole has joined your group", "source": "com.devcpu.oregantrail.start" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "PackedItem", "message": "You have decided to pack 5 chickens", "source": "com.devcpu.oregantrail.packinTime" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "PackedItem", "message": "You have decided to pack a knife", "source": "com.devcpu.oregantrail.packinTime" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "PackedItem", "message": "You have decided to pack an axe", "source": "com.devcpu.oregantrail.packinTime" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "PackedItem", "message": "You have decided to pack 20 cast iron pans", "source": "com.devcpu.oregantrail.packinTime" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "PackedItem", "message": "You have decided to pack bullets", "source": "com.devcpu.oregantrail.poorBuffalo" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "PackedItem", "message": "You have decided to pack a rifle", "source": "com.devcpu.oregantrail.poorBuffalo" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "PackedItem", "message": "You have decided to pack 10 oxen", "source": "com.devcpu.oregantrail.packinTime" },
+    { "datetime": "2013-10-15T09:05:05", "type": "INFO", "name": "Start", "message": "You have started your journey", "source": "com.devcpu.oregantrail.start" }
+  ]
+};
+
+
+$(document).ready(function() {
+  $('#table_id').DataTable({
+     "data":logData.logs,
+
+	 "columns": [
+		 { "data": "datetime", "title":"Timestamp" },
+		 { "data": "type","title":"Type" },
+		 { "data": "name","title":"Name" },
+		 { "data": "message","title":"Message" },
+		 { "data": "source","title":"Source" }
+    ]
+  });
+
+});
+</script>
+<h1>Log Viewer</h1>
+<p>The following table displays a log of events from a game. Each log record contains the timestamp, type, name, message and source class. Each column in the table can sorted, and there is a search capability too! Only 10 records are shown at a time, but users can browse additional pages.</p>
+<table id="table_id" class="display">
+</table>
+</body>
+</html>
