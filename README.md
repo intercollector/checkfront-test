@@ -1,7 +1,7 @@
-# checkfront-test
+# checkfront-excercise-1
 Checkfront Assignment for Dev Team Lead role
 
-Two excercises were given, each with a solution in a single file.
+Two excercises were given, this is the first excercise.
 
 Log Viewer 
 ----------
